@@ -1,0 +1,25 @@
+.cars{
+    width: 100%;
+
+}
+
+
+.header{
+   
+    display: flex;
+    justify-content: space-around;
+
+}
+.headerLeft, .headerRight{
+    display: flex;
+    
+}
+p{
+    margin: 15px;
+}
+.card-title{
+    font-size: 35px;
+}
+.card{
+    border: 1px solid black; border-radius: 5px; padding: 10px;
+}

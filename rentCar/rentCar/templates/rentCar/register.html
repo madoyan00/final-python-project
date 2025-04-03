@@ -1,0 +1,16 @@
+{% extends 'rentCar/index.html' %}
+
+{% block title %} Register {% endblock %}
+
+{% block content %}
+<h1>Register</h1>
+
+<form action="" method="post">
+  {% csrf_token %}
+  
+
+  {{ form.as_p }}
+  <button type="submit">Register</button>
+</form>
+  <p>Already hav an account? &nbsp; <a href="{% url 'auth'  %}"><strong>Login</strong></a></p>
+{% endblock %}
