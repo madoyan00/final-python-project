@@ -1,0 +1,20 @@
+{% extends 'rentCar/index.html' %}
+
+{% block title %} Detail {% endblock %}
+
+
+{% block content %}
+
+<div class="card" style="border: 1px solid black; border-radius: 5px; padding: 10px; width: 25%; height:  350px; margin-top: 20px;">
+    <img src="../../../media/{{ car.image }}" alt="">
+        <div class="card-body" style="border-top: 1px solid black;">
+                <p class="card-text">Brand: {{ car.brand }}</p>
+                <p class="card-text">Model: {{ car.model }}</p>
+                <p class="card-text"><small class="text-body-secondary">Year: {{ car.year }}</small></p>
+                <p class="card-text"><small class="text-body-secondary">Price: {{ car.price }}</small></p>
+                
+        </div>
+    </div>
+</div>
+
+{% endblock %}

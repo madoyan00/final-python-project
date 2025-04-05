@@ -1,0 +1,32 @@
+{% extends 'rentCar/index.html' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+<header class="header">
+    {% if request.user.is_authenticated %}
+        <div class="headerLeft">
+        <p><a href="{% url 'cars' %}"><i class="fa-solid fa-house"></i></a></p>
+        <p><a href="{% url 'user' %}">{{ request.user }}</a></p>
+        </div>
+        <div class="headerLeft">
+        <p><a href="{% url 'nothification' %}"><i class="fa-solid fa-bell"></i></a></p>
+        <p><a href="{% url 'add_car' %}"><i class="fa-solid fa-plus"></i></a></p>
+        <p><a href="{% url 'settings' %}"><i class="fa-solid fa-gear"></i></a></p>
+        
+        <p><a href="{% url 'logout' %}">Logout</a></p>
+        </div>
+    {% else %}
+        <p><a href="{% url 'auth' %}">Login</a></p>
+    {% endif %}
+</header>
+    <div class="nothification" style="display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 90px;">
+        <i class="fa-solid fa-gear" style="font-size: 50px;"></i>
+        <h1>Settings</h1>
+        <p>is being processed...</p>
+    </div>
+{% endblock %}

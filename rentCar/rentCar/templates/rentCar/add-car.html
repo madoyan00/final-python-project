@@ -1,0 +1,33 @@
+{% extends 'rentCar/index.html' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+<header class="header">
+    {% if request.user.is_authenticated %}
+        <div class="headerLeft">
+        <p><a href="{% url 'cars' %}"><i class="fa-solid fa-house"></i></a></p>
+        <p><a href="{% url 'user' %}">{{ request.user }}</a></p>
+        </div>
+        <div class="headerRight">
+        <p><a href="{% url 'nothification' %}"><i class="fa-solid fa-bell"></i></a></p>
+        <p><a href="{% url 'add_car' %}"><i class="fa-solid fa-plus"></i></a></p>
+        <p><a href="{% url 'settings' %}"><i class="fa-solid fa-gear"></i></a></p>
+        
+        <p><a href="{% url 'logout' %}">Logout</a></p>
+        </div>
+    {% else %}
+        <p><a href="{% url 'auth' %}">Login</a></p>
+    {% endif %}
+</header>
+<div class="card-body">
+    <form action="" method="post" style="display: flex; flex-direction: column; align-items: center; border: 1px solid black; width: 30%; margin-left: 550px; border-radius: 5%; padding-bottom: 20px; margin-top: 50px;">
+      {% csrf_token %}
+  
+      {{ form.as_p }}
+      <button class="button" type="submit">Add New Car</button>
+    </form>
+  </div>
+
+   
+{% endblock %}
